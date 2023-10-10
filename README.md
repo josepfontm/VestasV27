@@ -18,4 +18,12 @@ This is a previous study carried out by the Technical University of Denmark (DTU
 
 ## Hybrid implicit-explicit regression (Rationale of our approach)
 
+Explicit vs Implicit (Advantages and drawbacks)
+
+Hybrid approach
+
 ### Abstract:
+
+### Reference:
+
+
