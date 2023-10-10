@@ -1,5 +1,5 @@
 # VestasV27
-
+**Introduction:**
 Code used to process the data from a Vestas V27 Wind Turbine.
 The dataset used corresponds to an experimental test carried out on a fully operational Vestas V27 between 2014 and 2015 in Roskilde, Denmark.
 Researchers implemented a set of accelerometers along one of the three blades. In total, 12 monoaxial piezoelectric accelerometers (BK Type 4507B). The nominal sensitivity of accelerometers was selected based on their location and expected vibration.
@@ -16,4 +16,6 @@ Some additional documents related to the V27 dataset, which I found helpful:
 [DTU Report Wind turbine test Vestas V27-225kW](http://www.husdesign.no/lars/V27-Teknisk%20spesifikasjon/gen%20specification%20v27.pdf)
 This is a previous study carried out by the Technical University of Denmark (DTU). The report describes fundamental measurements performed on Vestas V27.
 
+## Hybrid implicit-explicit regression (Rationale of our approach)
 
+### Abstract:
