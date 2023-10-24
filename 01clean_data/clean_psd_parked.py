@@ -31,17 +31,17 @@ df_metadata = df_metadata.reset_index()
 df = pd.concat([df_psd.iloc[:,1:],df_metadata.iloc[:,1:]],axis=1,join='inner')
 
 #CLASSIFY IN DIFFERENT MODES OF OPERATION
-df_idle = df[(df.RPM <= 0.5) & (df.PitchMean < 60)]
+df_parked = df[(df.RPM <= 0.5) & (df.PitchMean >= 60)]
 
 keys_psd = list(psd_u.columns.values) #Extract keys to access psd at different frequencies
 keys_metadata = list(df_metadata.columns.values)
 
-psd_idle = df_idle.loc[:,keys_psd]
+psd_parked = df_parked.loc[:,keys_psd]
 
-psd_idle = psd_idle.to_numpy()
+psd_parked = psd_parked.to_numpy()
 
-variance_psd = np.var(psd_idle,axis=1)
-rms_psd = np.mean(psd_idle,axis=1)
+variance_psd = np.var(psd_parked,axis=1)
+rms_psd = np.mean(psd_parked,axis=1)
 
 #Colors used for plotting
 colors = {'undamaged':'green',
@@ -61,28 +61,28 @@ colors = {'undamaged':'green',
 # plt.semilogy(psd_rpm32)
 
 low = np.percentile(variance_psd,0)
-high = np.percentile(variance_psd,100)
+high = np.percentile(variance_psd,98)
 
 #Outlier analysis
-print(df_idle.shape)
-df_idle = df_idle[((variance_psd < high) & (variance_psd > low))]
-#df_idle = df_idle[(variance_psd < high_variance) & (variance_psd > low_variance)]
-print(df_idle.shape)
+print(df_parked.shape)
+df_parked = df_parked[((variance_psd < high) & (variance_psd > low))]
+#df_parked = df_parked[(variance_psd < high_variance) & (variance_psd > low_variance)]
+print(df_parked.shape)
 
-psd_idle = df_idle.loc[:,keys_psd]
-metadata_idle = df_idle.loc[:,keys_metadata[1:]]
+psd_parked = df_parked.loc[:,keys_psd]
+metadata_parked = df_parked.loc[:,keys_metadata[1:]]
 
 #Save results
-psd_idle.to_csv('../code_6modes/01clean_data/results/psd_idle.csv',sep=';')
-metadata_idle.to_csv('../code_6modes/01clean_data/results/metadata_idle.csv',sep=';')
+psd_parked.to_csv('../code_6modes/01clean_data/results/psd_parked.csv',sep=';')
+metadata_parked.to_csv('../code_6modes/01clean_data/results/metadata_parked.csv',sep=';')
 
-psd_idle = psd_idle.to_numpy()
+psd_parked = psd_parked.to_numpy()
 
-variance_psd = np.var(psd_idle,axis=1)
-rms_psd = np.mean(psd_idle,axis=1)
+variance_psd = np.var(psd_parked,axis=1)
+rms_psd = np.mean(psd_parked,axis=1)
 
-plt.figure('Clean PSDs Idle')
-plt.semilogy(psd_idle.T,color='blue',linewidth = 1)
+plt.figure('Clean PSDs Parked')
+plt.semilogy(psd_parked.T,color='blue',linewidth = 0.1)
 plt.show()
 
 print('Done')
