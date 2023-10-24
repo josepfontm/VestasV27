@@ -33,12 +33,12 @@ def plot_correction(order: int, threshold:float, pc_env: int, dsf: int):
     """
 
     #Change paths if necessary
-    path_scenario_idle = '../code_6modes/03regression_analysis/00outliers_removed/scenario_idle.csv'
-    path_scenario_parked = '../code_6modes/03regression_analysis/00outliers_removed/scenario_parked.csv'
-    path_scenario_t1 = '../code_6modes/03regression_analysis/00outliers_removed/scenario_t1.csv'
-    path_scenario_rpm32 = '../code_6modes/03regression_analysis/00outliers_removed/scenario_rpm32.csv'
-    path_scenario_t2 = '../code_6modes/03regression_analysis/00outliers_removed/scenario_t2.csv'
-    path_scenario_rpm43 = '../code_6modes/03regression_analysis/00outliers_removed/scenario_rpm43.csv'
+    path_scenario_idle = '../VestasV27/03regression_analysis/00outliers_removed/scenario_idle.csv'
+    path_scenario_parked = '../VestasV27/03regression_analysis/00outliers_removed/scenario_parked.csv'
+    path_scenario_t1 = '../VestasV27/03regression_analysis/00outliers_removed/scenario_t1.csv'
+    path_scenario_rpm32 = '../VestasV27/03regression_analysis/00outliers_removed/scenario_rpm32.csv'
+    path_scenario_t2 = '../VestasV27/03regression_analysis/00outliers_removed/scenario_t2.csv'
+    path_scenario_rpm43 = '../VestasV27/03regression_analysis/00outliers_removed/scenario_rpm43.csv'
 
     scenario_idle = pd.read_csv(path_scenario_idle, index_col=0,sep=';')
     scenario_parked = pd.read_csv(path_scenario_parked, index_col=0,sep=';')
@@ -48,12 +48,12 @@ def plot_correction(order: int, threshold:float, pc_env: int, dsf: int):
     scenario_rpm43 = pd.read_csv(path_scenario_rpm43, index_col=0,sep=';')
 
     #Load paths for pc's environemntal data
-    path_pca_env_idle = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_idle.csv'
-    path_pca_env_parked = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_parked.csv'
-    path_pca_env_t1 = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_t1.csv'
-    path_pca_env_rpm32 = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_rpm32.csv'
-    path_pca_env_t2 = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_t2.csv'
-    path_pca_env_rpm43 = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_rpm43.csv'
+    path_pca_env_idle = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_idle.csv'
+    path_pca_env_parked = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_parked.csv'
+    path_pca_env_t1 = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_t1.csv'
+    path_pca_env_rpm32 = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_rpm32.csv'
+    path_pca_env_t2 = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_t2.csv'
+    path_pca_env_rpm43 = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_rpm43.csv'
 
     pca_env_idle = pd.read_csv(path_pca_env_idle,index_col=0,sep=';')
     pca_env_parked = pd.read_csv(path_pca_env_parked,index_col=0,sep=';')
@@ -62,12 +62,12 @@ def plot_correction(order: int, threshold:float, pc_env: int, dsf: int):
     pca_env_t2 = pd.read_csv(path_pca_env_t2,index_col=0,sep=';')
     pca_env_rpm43 = pd.read_csv(path_pca_env_rpm43,index_col=0,sep=';')
 
-    path_pca_env_train_idle = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_train_idle.csv'
-    path_pca_env_train_parked = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_train_parked.csv'
-    path_pca_env_train_t1 = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_train_t1.csv'
-    path_pca_env_train_rpm32 = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_train_rpm32.csv'
-    path_pca_env_train_t2 = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_train_t2.csv'
-    path_pca_env_train_rpm43 = '../code_6modes/03regression_analysis/00outliers_removed/pca_env_train_rpm43.csv'
+    path_pca_env_train_idle = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_train_idle.csv'
+    path_pca_env_train_parked = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_train_parked.csv'
+    path_pca_env_train_t1 = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_train_t1.csv'
+    path_pca_env_train_rpm32 = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_train_rpm32.csv'
+    path_pca_env_train_t2 = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_train_t2.csv'
+    path_pca_env_train_rpm43 = '../VestasV27/03regression_analysis/00outliers_removed/pca_env_train_rpm43.csv'
 
     pca_env_train_idle = pd.read_csv(path_pca_env_train_idle,index_col=0,sep=';')
     pca_env_train_parked = pd.read_csv(path_pca_env_train_parked,index_col=0,sep=';')
@@ -77,19 +77,19 @@ def plot_correction(order: int, threshold:float, pc_env: int, dsf: int):
     pca_env_train_rpm43 = pd.read_csv(path_pca_env_train_rpm43,index_col=0,sep=';')
 
     #Load paths for pc's operational data
-    path_pca_op_idle = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_idle.csv'
-    path_pca_op_parked = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_parked.csv'
-    path_pca_op_t1 = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_t1.csv'
-    path_pca_op_rpm32 = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_rpm32.csv'
-    path_pca_op_t2 = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_t2.csv'
-    path_pca_op_rpm43 = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_rpm43.csv'
+    path_pca_op_idle = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_idle.csv'
+    path_pca_op_parked = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_parked.csv'
+    path_pca_op_t1 = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_t1.csv'
+    path_pca_op_rpm32 = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_rpm32.csv'
+    path_pca_op_t2 = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_t2.csv'
+    path_pca_op_rpm43 = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_rpm43.csv'
 
-    path_pca_op_train_idle = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_train_idle.csv'
-    path_pca_op_train_parked = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_train_parked.csv'
-    path_pca_op_train_t1 = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_train_t1.csv'
-    path_pca_op_train_rpm32 = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_train_rpm32.csv'
-    path_pca_op_train_t2 = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_train_t2.csv'
-    path_pca_op_train_rpm43 = '../code_6modes/03regression_analysis/00outliers_removed/pca_op_train_rpm43.csv'
+    path_pca_op_train_idle = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_train_idle.csv'
+    path_pca_op_train_parked = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_train_parked.csv'
+    path_pca_op_train_t1 = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_train_t1.csv'
+    path_pca_op_train_rpm32 = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_train_rpm32.csv'
+    path_pca_op_train_t2 = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_train_t2.csv'
+    path_pca_op_train_rpm43 = '../VestasV27/03regression_analysis/00outliers_removed/pca_op_train_rpm43.csv'
 
     pca_op_idle = pd.read_csv(path_pca_op_idle,index_col=0,sep=';')
     pca_op_parked = pd.read_csv(path_pca_op_parked,index_col=0,sep=';')
@@ -121,12 +121,12 @@ def plot_correction(order: int, threshold:float, pc_env: int, dsf: int):
     pca_train_rpm43 = pd.concat([pca_env_train_rpm43,pca_op_train_rpm43],axis=1)
 
     #Paths damage-sensitive features
-    path_dsf_idle = '../code_6modes/03regression_analysis/00outliers_removed/dsf_idle.csv'
-    path_dsf_parked = '../code_6modes/03regression_analysis/00outliers_removed/dsf_parked.csv'
-    path_dsf_t1 = '../code_6modes/03regression_analysis/00outliers_removed/dsf_t1.csv'
-    path_dsf_rpm32 = '../code_6modes/03regression_analysis/00outliers_removed/dsf_rpm32.csv'
-    path_dsf_t2 = '../code_6modes/03regression_analysis/00outliers_removed/dsf_t2.csv'
-    path_dsf_rpm43 = '../code_6modes/03regression_analysis/00outliers_removed/dsf_rpm43.csv'
+    path_dsf_idle = '../VestasV27/03regression_analysis/00outliers_removed/dsf_idle.csv'
+    path_dsf_parked = '../VestasV27/03regression_analysis/00outliers_removed/dsf_parked.csv'
+    path_dsf_t1 = '../VestasV27/03regression_analysis/00outliers_removed/dsf_t1.csv'
+    path_dsf_rpm32 = '../VestasV27/03regression_analysis/00outliers_removed/dsf_rpm32.csv'
+    path_dsf_t2 = '../VestasV27/03regression_analysis/00outliers_removed/dsf_t2.csv'
+    path_dsf_rpm43 = '../VestasV27/03regression_analysis/00outliers_removed/dsf_rpm43.csv'
 
     dsf_idle = pd.read_csv(path_dsf_idle,index_col=0,sep=';')
     dsf_parked = pd.read_csv(path_dsf_parked,index_col=0,sep=';')
@@ -135,12 +135,12 @@ def plot_correction(order: int, threshold:float, pc_env: int, dsf: int):
     dsf_t2 = pd.read_csv(path_dsf_t2,index_col=0,sep=';')
     dsf_rpm43 = pd.read_csv(path_dsf_rpm43,index_col=0,sep=';')
 
-    path_dsf_train_idle = '../code_6modes/03regression_analysis/00outliers_removed/dsf_train_idle.csv'
-    path_dsf_train_parked = '../code_6modes/03regression_analysis/00outliers_removed/dsf_train_parked.csv'
-    path_dsf_train_t1 = '../code_6modes/03regression_analysis/00outliers_removed/dsf_train_t1.csv'
-    path_dsf_train_rpm32 = '../code_6modes/03regression_analysis/00outliers_removed/dsf_train_rpm32.csv'
-    path_dsf_train_t2 = '../code_6modes/03regression_analysis/00outliers_removed/dsf_train_t2.csv'
-    path_dsf_train_rpm43 = '../code_6modes/03regression_analysis/00outliers_removed/dsf_train_rpm43.csv'
+    path_dsf_train_idle = '../VestasV27/03regression_analysis/00outliers_removed/dsf_train_idle.csv'
+    path_dsf_train_parked = '../VestasV27/03regression_analysis/00outliers_removed/dsf_train_parked.csv'
+    path_dsf_train_t1 = '../VestasV27/03regression_analysis/00outliers_removed/dsf_train_t1.csv'
+    path_dsf_train_rpm32 = '../VestasV27/03regression_analysis/00outliers_removed/dsf_train_rpm32.csv'
+    path_dsf_train_t2 = '../VestasV27/03regression_analysis/00outliers_removed/dsf_train_t2.csv'
+    path_dsf_train_rpm43 = '../VestasV27/03regression_analysis/00outliers_removed/dsf_train_rpm43.csv'
 
     dsf_train_idle = pd.read_csv(path_dsf_train_idle,index_col=0,sep=';')
     dsf_train_parked = pd.read_csv(path_dsf_train_parked,index_col=0,sep=';')
@@ -149,12 +149,12 @@ def plot_correction(order: int, threshold:float, pc_env: int, dsf: int):
     dsf_train_t2 = pd.read_csv(path_dsf_train_t2,index_col=0,sep=';')
     dsf_train_rpm43 = pd.read_csv(path_dsf_train_rpm43,index_col=0,sep=';')
 
-    path_corrected_dsf_idle = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_idle.csv'
-    path_corrected_dsf_parked = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_parked.csv'
-    path_corrected_dsf_t1 = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_t1.csv'
-    path_corrected_dsf_rpm32 = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_rpm32.csv'
-    path_corrected_dsf_t2 = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_t2.csv'
-    path_corrected_dsf_rpm43 = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_rpm43.csv'
+    path_corrected_dsf_idle = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_idle.csv'
+    path_corrected_dsf_parked = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_parked.csv'
+    path_corrected_dsf_t1 = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_t1.csv'
+    path_corrected_dsf_rpm32 = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_rpm32.csv'
+    path_corrected_dsf_t2 = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_t2.csv'
+    path_corrected_dsf_rpm43 = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_rpm43.csv'
 
     corrected_dsf_idle = pd.read_csv(path_corrected_dsf_idle,index_col=0,sep=';')
     corrected_dsf_parked = pd.read_csv(path_corrected_dsf_parked,index_col=0,sep=';')
@@ -163,12 +163,12 @@ def plot_correction(order: int, threshold:float, pc_env: int, dsf: int):
     corrected_dsf_t2 = pd.read_csv(path_corrected_dsf_t2,index_col=0,sep=';')
     corrected_dsf_rpm43 = pd.read_csv(path_corrected_dsf_rpm43,index_col=0,sep=';')
 
-    path_corrected_dsf_train_idle = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_idle_train.csv'
-    path_corrected_dsf_train_parked = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_parked_train.csv'
-    path_corrected_dsf_train_t1 = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_t1_train.csv'
-    path_corrected_dsf_train_rpm32 = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_rpm32_train.csv'
-    path_corrected_dsf_train_t2 = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_t2_train.csv'
-    path_corrected_dsf_train_rpm43 = '../code_6modes/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_rpm43_train.csv'
+    path_corrected_dsf_train_idle = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_idle_train.csv'
+    path_corrected_dsf_train_parked = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_parked_train.csv'
+    path_corrected_dsf_train_t1 = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_t1_train.csv'
+    path_corrected_dsf_train_rpm32 = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_rpm32_train.csv'
+    path_corrected_dsf_train_t2 = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_t2_train.csv'
+    path_corrected_dsf_train_rpm43 = '../VestasV27/03regression_analysis/02correction/poly_order'+str(order)+'/t'+str(threshold)+'/corrected_dsf_rpm43_train.csv'
 
     corrected_dsf_train_idle = pd.read_csv(path_corrected_dsf_train_idle,index_col=0,sep=';')
     corrected_dsf_train_parked = pd.read_csv(path_corrected_dsf_train_parked,index_col=0,sep=';')

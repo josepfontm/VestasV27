@@ -19,19 +19,19 @@ def control_chart(regression_model: str, threshold:float):
 
     """
 
-    path_cdsf_idle = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle.csv"
-    path_cdsf_parked = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked.csv"
-    path_cdsf_t1 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1.csv"
-    path_cdsf_rpm32 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32.csv"
-    path_cdsf_t2 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2.csv"
-    path_cdsf_rpm43 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43.csv"
+    path_cdsf_idle = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle.csv"
+    path_cdsf_parked = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked.csv"
+    path_cdsf_t1 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1.csv"
+    path_cdsf_rpm32 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32.csv"
+    path_cdsf_t2 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2.csv"
+    path_cdsf_rpm43 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43.csv"
 
-    path_cdsf_idle_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle_train.csv"
-    path_cdsf_parked_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked_train.csv"
-    path_cdsf_t1_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1_train.csv"
-    path_cdsf_rpm32_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32_train.csv"
-    path_cdsf_t2_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2_train.csv"
-    path_cdsf_rpm43_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43_train.csv"
+    path_cdsf_idle_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle_train.csv"
+    path_cdsf_parked_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked_train.csv"
+    path_cdsf_t1_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1_train.csv"
+    path_cdsf_rpm32_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32_train.csv"
+    path_cdsf_t2_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2_train.csv"
+    path_cdsf_rpm43_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43_train.csv"
 
     cdsf_idle = pd.read_csv(path_cdsf_idle,index_col=0,header=0,sep=';')
     cdsf_parked = pd.read_csv(path_cdsf_parked,index_col=0,header=0,sep=';')
@@ -47,19 +47,19 @@ def control_chart(regression_model: str, threshold:float):
     cdsf_train_t2 = pd.read_csv(path_cdsf_t2_train,index_col=0,header=0,sep=';')
     cdsf_train_rpm43 = pd.read_csv(path_cdsf_rpm43_train,index_col=0,header=0,sep=';')
 
-    path_scenario_idle = "../code_6modes/03regression_analysis/00standarized/scenario_idle.csv"
-    path_scenario_parked = "../code_6modes/03regression_analysis/00standarized/scenario_parked.csv"
-    path_scenario_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_t1.csv"
-    path_scenario_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm32.csv"
-    path_scenario_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_t2.csv"
-    path_scenario_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm43.csv"
+    path_scenario_idle = "../VestasV27/03regression_analysis/00standarized/scenario_idle.csv"
+    path_scenario_parked = "../VestasV27/03regression_analysis/00standarized/scenario_parked.csv"
+    path_scenario_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_t1.csv"
+    path_scenario_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm32.csv"
+    path_scenario_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_t2.csv"
+    path_scenario_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm43.csv"
 
-    path_scenario_train_idle = "../code_6modes/03regression_analysis/00standarized/scenario_train_idle.csv"
-    path_scenario_train_parked = "../code_6modes/03regression_analysis/00standarized/scenario_train_parked.csv"
-    path_scenario_train_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_train_t1.csv"
-    path_scenario_train_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_train_rpm32.csv"
-    path_scenario_train_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_train_t2.csv"
-    path_scenario_train_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_train_rpm43.csv"
+    path_scenario_train_idle = "../VestasV27/03regression_analysis/00standarized/scenario_train_idle.csv"
+    path_scenario_train_parked = "../VestasV27/03regression_analysis/00standarized/scenario_train_parked.csv"
+    path_scenario_train_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_train_t1.csv"
+    path_scenario_train_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_train_rpm32.csv"
+    path_scenario_train_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_train_t2.csv"
+    path_scenario_train_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_train_rpm43.csv"
 
     scenario_idle = pd.read_csv(path_scenario_idle, index_col=0, header=0, sep=';')
     scenario_parked = pd.read_csv(path_scenario_parked, index_col=0, header=0, sep=';')
@@ -252,19 +252,19 @@ def control_chart_with_reference(regression_model: str, threshold:float):
 
     """
 
-    path_cdsf_idle = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle.csv"
-    path_cdsf_parked = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked.csv"
-    path_cdsf_t1 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1.csv"
-    path_cdsf_rpm32 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32.csv"
-    path_cdsf_t2 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2.csv"
-    path_cdsf_rpm43 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43.csv"
+    path_cdsf_idle = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle.csv"
+    path_cdsf_parked = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked.csv"
+    path_cdsf_t1 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1.csv"
+    path_cdsf_rpm32 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32.csv"
+    path_cdsf_t2 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2.csv"
+    path_cdsf_rpm43 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43.csv"
 
-    path_cdsf_idle_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle_train.csv"
-    path_cdsf_parked_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked_train.csv"
-    path_cdsf_t1_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1_train.csv"
-    path_cdsf_rpm32_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32_train.csv"
-    path_cdsf_t2_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2_train.csv"
-    path_cdsf_rpm43_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43_train.csv"
+    path_cdsf_idle_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle_train.csv"
+    path_cdsf_parked_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked_train.csv"
+    path_cdsf_t1_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1_train.csv"
+    path_cdsf_rpm32_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32_train.csv"
+    path_cdsf_t2_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2_train.csv"
+    path_cdsf_rpm43_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43_train.csv"
 
     cdsf_idle = pd.read_csv(path_cdsf_idle,index_col=0,header=0,sep=';')
     cdsf_parked = pd.read_csv(path_cdsf_parked,index_col=0,header=0,sep=';')
@@ -280,19 +280,19 @@ def control_chart_with_reference(regression_model: str, threshold:float):
     cdsf_train_t2 = pd.read_csv(path_cdsf_t2_train,index_col=0,header=0,sep=';')
     cdsf_train_rpm43 = pd.read_csv(path_cdsf_rpm43_train,index_col=0,header=0,sep=';')
 
-    path_cdsf_idle_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_idle.csv"
-    path_cdsf_parked_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_parked.csv"
-    path_cdsf_t1_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t1.csv"
-    path_cdsf_rpm32_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm32.csv"
-    path_cdsf_t2_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t2.csv"
-    path_cdsf_rpm43_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm43.csv"
+    path_cdsf_idle_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_idle.csv"
+    path_cdsf_parked_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_parked.csv"
+    path_cdsf_t1_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t1.csv"
+    path_cdsf_rpm32_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm32.csv"
+    path_cdsf_t2_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t2.csv"
+    path_cdsf_rpm43_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm43.csv"
 
-    path_cdsf_idle_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_idle_train.csv"
-    path_cdsf_parked_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_parked_train.csv"
-    path_cdsf_t1_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t1_train.csv"
-    path_cdsf_rpm32_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm32_train.csv"
-    path_cdsf_t2_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t2_train.csv"
-    path_cdsf_rpm43_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm43_train.csv"
+    path_cdsf_idle_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_idle_train.csv"
+    path_cdsf_parked_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_parked_train.csv"
+    path_cdsf_t1_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t1_train.csv"
+    path_cdsf_rpm32_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm32_train.csv"
+    path_cdsf_t2_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t2_train.csv"
+    path_cdsf_rpm43_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm43_train.csv"
 
     cdsf_idle_uncorrected = pd.read_csv(path_cdsf_idle_uncorrected,index_col=0,header=0,sep=';')
     cdsf_parked_uncorrected = pd.read_csv(path_cdsf_parked_uncorrected,index_col=0,header=0,sep=';')
@@ -308,19 +308,19 @@ def control_chart_with_reference(regression_model: str, threshold:float):
     cdsf_train_t2_uncorrected = pd.read_csv(path_cdsf_t2_train_uncorrected,index_col=0,header=0,sep=';')
     cdsf_train_rpm43_uncorrected = pd.read_csv(path_cdsf_rpm43_train_uncorrected,index_col=0,header=0,sep=';')
 
-    path_scenario_idle = "../code_6modes/03regression_analysis/00standarized/scenario_idle.csv"
-    path_scenario_parked = "../code_6modes/03regression_analysis/00standarized/scenario_parked.csv"
-    path_scenario_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_t1.csv"
-    path_scenario_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm32.csv"
-    path_scenario_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_t2.csv"
-    path_scenario_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm43.csv"
+    path_scenario_idle = "../VestasV27/03regression_analysis/00standarized/scenario_idle.csv"
+    path_scenario_parked = "../VestasV27/03regression_analysis/00standarized/scenario_parked.csv"
+    path_scenario_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_t1.csv"
+    path_scenario_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm32.csv"
+    path_scenario_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_t2.csv"
+    path_scenario_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm43.csv"
 
-    path_scenario_train_idle = "../code_6modes/03regression_analysis/00standarized/scenario_train_idle.csv"
-    path_scenario_train_parked = "../code_6modes/03regression_analysis/00standarized/scenario_train_parked.csv"
-    path_scenario_train_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_train_t1.csv"
-    path_scenario_train_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_train_rpm32.csv"
-    path_scenario_train_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_train_t2.csv"
-    path_scenario_train_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_train_rpm43.csv"
+    path_scenario_train_idle = "../VestasV27/03regression_analysis/00standarized/scenario_train_idle.csv"
+    path_scenario_train_parked = "../VestasV27/03regression_analysis/00standarized/scenario_train_parked.csv"
+    path_scenario_train_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_train_t1.csv"
+    path_scenario_train_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_train_rpm32.csv"
+    path_scenario_train_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_train_t2.csv"
+    path_scenario_train_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_train_rpm43.csv"
 
     scenario_idle = pd.read_csv(path_scenario_idle, index_col=0, header=0, sep=';')
     scenario_parked = pd.read_csv(path_scenario_parked, index_col=0, header=0, sep=';')
@@ -601,19 +601,19 @@ def control_chart_with_reference_operational_mode(regression_model: str, thresho
 
     """
 
-    path_cdsf_idle = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle.csv"
-    path_cdsf_parked = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked.csv"
-    path_cdsf_t1 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1.csv"
-    path_cdsf_rpm32 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32.csv"
-    path_cdsf_t2 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2.csv"
-    path_cdsf_rpm43 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43.csv"
+    path_cdsf_idle = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle.csv"
+    path_cdsf_parked = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked.csv"
+    path_cdsf_t1 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1.csv"
+    path_cdsf_rpm32 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32.csv"
+    path_cdsf_t2 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2.csv"
+    path_cdsf_rpm43 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43.csv"
 
-    path_cdsf_idle_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle_train.csv"
-    path_cdsf_parked_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked_train.csv"
-    path_cdsf_t1_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1_train.csv"
-    path_cdsf_rpm32_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32_train.csv"
-    path_cdsf_t2_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2_train.csv"
-    path_cdsf_rpm43_train = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43_train.csv"
+    path_cdsf_idle_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle_train.csv"
+    path_cdsf_parked_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked_train.csv"
+    path_cdsf_t1_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1_train.csv"
+    path_cdsf_rpm32_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32_train.csv"
+    path_cdsf_t2_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2_train.csv"
+    path_cdsf_rpm43_train = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43_train.csv"
 
     cdsf_idle = pd.read_csv(path_cdsf_idle,index_col=0,header=0,sep=';')
     cdsf_parked = pd.read_csv(path_cdsf_parked,index_col=0,header=0,sep=';')
@@ -629,19 +629,19 @@ def control_chart_with_reference_operational_mode(regression_model: str, thresho
     cdsf_train_t2 = pd.read_csv(path_cdsf_t2_train,index_col=0,header=0,sep=';')
     cdsf_train_rpm43 = pd.read_csv(path_cdsf_rpm43_train,index_col=0,header=0,sep=';')
 
-    path_cdsf_idle_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_idle.csv"
-    path_cdsf_parked_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_parked.csv"
-    path_cdsf_t1_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t1.csv"
-    path_cdsf_rpm32_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm32.csv"
-    path_cdsf_t2_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t2.csv"
-    path_cdsf_rpm43_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm43.csv"
+    path_cdsf_idle_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_idle.csv"
+    path_cdsf_parked_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_parked.csv"
+    path_cdsf_t1_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t1.csv"
+    path_cdsf_rpm32_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm32.csv"
+    path_cdsf_t2_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t2.csv"
+    path_cdsf_rpm43_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm43.csv"
 
-    path_cdsf_idle_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_idle_train.csv"
-    path_cdsf_parked_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_parked_train.csv"
-    path_cdsf_t1_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t1_train.csv"
-    path_cdsf_rpm32_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm32_train.csv"
-    path_cdsf_t2_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t2_train.csv"
-    path_cdsf_rpm43_train_uncorrected = "../code_6modes/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm43_train.csv"
+    path_cdsf_idle_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_idle_train.csv"
+    path_cdsf_parked_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_parked_train.csv"
+    path_cdsf_t1_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t1_train.csv"
+    path_cdsf_rpm32_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm32_train.csv"
+    path_cdsf_t2_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_t2_train.csv"
+    path_cdsf_rpm43_train_uncorrected = "../VestasV27/03regression_analysis/02correction/" + 'adaptive_order1' +'/t'+str(1.0)+ "/corrected_dsf_rpm43_train.csv"
 
     cdsf_idle_uncorrected = pd.read_csv(path_cdsf_idle_uncorrected,index_col=0,header=0,sep=';')
     cdsf_parked_uncorrected = pd.read_csv(path_cdsf_parked_uncorrected,index_col=0,header=0,sep=';')
@@ -657,19 +657,19 @@ def control_chart_with_reference_operational_mode(regression_model: str, thresho
     cdsf_train_t2_uncorrected = pd.read_csv(path_cdsf_t2_train_uncorrected,index_col=0,header=0,sep=';')
     cdsf_train_rpm43_uncorrected = pd.read_csv(path_cdsf_rpm43_train_uncorrected,index_col=0,header=0,sep=';')
 
-    path_scenario_idle = "../code_6modes/03regression_analysis/00standarized/scenario_idle.csv"
-    path_scenario_parked = "../code_6modes/03regression_analysis/00standarized/scenario_parked.csv"
-    path_scenario_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_t1.csv"
-    path_scenario_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm32.csv"
-    path_scenario_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_t2.csv"
-    path_scenario_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm43.csv"
+    path_scenario_idle = "../VestasV27/03regression_analysis/00standarized/scenario_idle.csv"
+    path_scenario_parked = "../VestasV27/03regression_analysis/00standarized/scenario_parked.csv"
+    path_scenario_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_t1.csv"
+    path_scenario_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm32.csv"
+    path_scenario_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_t2.csv"
+    path_scenario_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm43.csv"
 
-    path_scenario_train_idle = "../code_6modes/03regression_analysis/00standarized/scenario_train_idle.csv"
-    path_scenario_train_parked = "../code_6modes/03regression_analysis/00standarized/scenario_train_parked.csv"
-    path_scenario_train_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_train_t1.csv"
-    path_scenario_train_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_train_rpm32.csv"
-    path_scenario_train_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_train_t2.csv"
-    path_scenario_train_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_train_rpm43.csv"
+    path_scenario_train_idle = "../VestasV27/03regression_analysis/00standarized/scenario_train_idle.csv"
+    path_scenario_train_parked = "../VestasV27/03regression_analysis/00standarized/scenario_train_parked.csv"
+    path_scenario_train_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_train_t1.csv"
+    path_scenario_train_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_train_rpm32.csv"
+    path_scenario_train_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_train_t2.csv"
+    path_scenario_train_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_train_rpm43.csv"
 
     scenario_idle = pd.read_csv(path_scenario_idle, index_col=0, header=0, sep=';')
     scenario_parked = pd.read_csv(path_scenario_parked, index_col=0, header=0, sep=';')

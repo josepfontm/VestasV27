@@ -1,12 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-path_metadata_idle = '../code_6modes/01clean_data/results/metadata_idle.csv'
-path_metadata_parked = '../code_6modes/01clean_data/results/metadata_parked.csv'
-path_metadata_t1 = '../code_6modes/01clean_data/results/metadata_t1.csv'
-path_metadata_rpm32 = '../code_6modes/01clean_data/results/metadata_rpm32.csv'
-path_metadata_t2= '../code_6modes/01clean_data/results/metadata_t2.csv'
-path_metadata_rpm43 = '../code_6modes/01clean_data/results/metadata_rpm43.csv'
+path_metadata_idle = '../VestasV27/01clean_data/results/metadata_idle.csv'
+path_metadata_parked = '../VestasV27/01clean_data/results/metadata_parked.csv'
+path_metadata_t1 = '../VestasV27/01clean_data/results/metadata_t1.csv'
+path_metadata_rpm32 = '../VestasV27/01clean_data/results/metadata_rpm32.csv'
+path_metadata_t2= '../VestasV27/01clean_data/results/metadata_t2.csv'
+path_metadata_rpm43 = '../VestasV27/01clean_data/results/metadata_rpm43.csv'
 
 metadata_idle = pd.read_csv(path_metadata_idle,index_col=0,sep=';')
 metadata_parked = pd.read_csv(path_metadata_parked,index_col=0,sep=';')
@@ -15,12 +15,12 @@ metadata_rpm32 = pd.read_csv(path_metadata_rpm32,index_col=0,sep=';')
 metadata_t2 = pd.read_csv(path_metadata_t2,index_col=0,sep=';')
 metadata_rpm43 = pd.read_csv(path_metadata_rpm43,index_col=0,sep=';')
 
-path_pca_op_idle = '../code_6modes/02dimensionality_reduction/results/pca_op_idle.csv'
-path_pca_op_parked = '../code_6modes/02dimensionality_reduction/results/pca_op_parked.csv'
-path_pca_op_t1 = '../code_6modes/02dimensionality_reduction/results/pca_op_t1.csv'
-path_pca_op_rpm32 = '../code_6modes/02dimensionality_reduction/results/pca_op_rpm32.csv'
-path_pca_op_t2 = '../code_6modes/02dimensionality_reduction/results/pca_op_t2.csv'
-path_pca_op_rpm43 = '../code_6modes/02dimensionality_reduction/results/pca_op_rpm43.csv'
+path_pca_op_idle = '../VestasV27/02dimensionality_reduction/results/pca_op_idle.csv'
+path_pca_op_parked = '../VestasV27/02dimensionality_reduction/results/pca_op_parked.csv'
+path_pca_op_t1 = '../VestasV27/02dimensionality_reduction/results/pca_op_t1.csv'
+path_pca_op_rpm32 = '../VestasV27/02dimensionality_reduction/results/pca_op_rpm32.csv'
+path_pca_op_t2 = '../VestasV27/02dimensionality_reduction/results/pca_op_t2.csv'
+path_pca_op_rpm43 = '../VestasV27/02dimensionality_reduction/results/pca_op_rpm43.csv'
 
 pca_op_idle = pd.read_csv(path_pca_op_idle,index_col=0,sep=';').reset_index()
 pca_op_parked = pd.read_csv(path_pca_op_parked,index_col=0,sep=';').reset_index()
@@ -29,12 +29,12 @@ pca_op_rpm32 = pd.read_csv(path_pca_op_rpm32,index_col=0,sep=';').reset_index()
 pca_op_t2 = pd.read_csv(path_pca_op_t2,index_col=0,sep=';').reset_index()
 pca_op_rpm43 = pd.read_csv(path_pca_op_rpm43,index_col=0,sep=';').reset_index()
 
-path_pca_env_idle = '../code_6modes/02dimensionality_reduction/results/pca_env_idle.csv'
-path_pca_env_parked = '../code_6modes/02dimensionality_reduction/results/pca_env_parked.csv'
-path_pca_env_t1 = '../code_6modes/02dimensionality_reduction/results/pca_env_t1.csv'
-path_pca_env_rpm32 = '../code_6modes/02dimensionality_reduction/results/pca_env_rpm32.csv'
-path_pca_env_t2 = '../code_6modes/02dimensionality_reduction/results/pca_env_t2.csv'
-path_pca_env_rpm43 = '../code_6modes/02dimensionality_reduction/results/pca_env_rpm43.csv'
+path_pca_env_idle = '../VestasV27/02dimensionality_reduction/results/pca_env_idle.csv'
+path_pca_env_parked = '../VestasV27/02dimensionality_reduction/results/pca_env_parked.csv'
+path_pca_env_t1 = '../VestasV27/02dimensionality_reduction/results/pca_env_t1.csv'
+path_pca_env_rpm32 = '../VestasV27/02dimensionality_reduction/results/pca_env_rpm32.csv'
+path_pca_env_t2 = '../VestasV27/02dimensionality_reduction/results/pca_env_t2.csv'
+path_pca_env_rpm43 = '../VestasV27/02dimensionality_reduction/results/pca_env_rpm43.csv'
 
 pca_env_idle = pd.read_csv(path_pca_env_idle,index_col=0,sep=';').reset_index()
 pca_env_parked = pd.read_csv(path_pca_env_parked,index_col=0,sep=';').reset_index()

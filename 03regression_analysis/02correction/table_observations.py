@@ -3,12 +3,12 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-path_scenario_idle = "../code_6modes/03regression_analysis/00standarized/scenario_idle.csv"
-path_scenario_parked = "../code_6modes/03regression_analysis/00standarized/scenario_parked.csv"
-path_scenario_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_t1.csv"
-path_scenario_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm32.csv"
-path_scenario_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_t2.csv"
-path_scenario_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm43.csv"
+path_scenario_idle = "../VestasV27/03regression_analysis/00standarized/scenario_idle.csv"
+path_scenario_parked = "../VestasV27/03regression_analysis/00standarized/scenario_parked.csv"
+path_scenario_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_t1.csv"
+path_scenario_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm32.csv"
+path_scenario_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_t2.csv"
+path_scenario_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm43.csv"
 
 scenario_idle = pd.read_csv(path_scenario_idle,index_col=0,header=0,sep=';')
 scenario_parked = pd.read_csv(path_scenario_parked,index_col=0,header=0,sep=';')
@@ -17,12 +17,12 @@ scenario_rpm32 = pd.read_csv(path_scenario_rpm32,index_col=0,header=0,sep=';')
 scenario_t2 = pd.read_csv(path_scenario_t2,index_col=0,header=0,sep=';')
 scenario_rpm43 = pd.read_csv(path_scenario_rpm43,index_col=0,header=0,sep=';')
 
-path_scenario_train_idle = "../code_6modes/03regression_analysis/00standarized/scenario_train_idle.csv"
-path_scenario_train_parked = "../code_6modes/03regression_analysis/00standarized/scenario_train_parked.csv"
-path_scenario_train_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_train_t1.csv"
-path_scenario_train_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_train_rpm32.csv"
-path_scenario_train_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_train_t2.csv"
-path_scenario_train_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_train_rpm43.csv"
+path_scenario_train_idle = "../VestasV27/03regression_analysis/00standarized/scenario_train_idle.csv"
+path_scenario_train_parked = "../VestasV27/03regression_analysis/00standarized/scenario_train_parked.csv"
+path_scenario_train_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_train_t1.csv"
+path_scenario_train_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_train_rpm32.csv"
+path_scenario_train_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_train_t2.csv"
+path_scenario_train_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_train_rpm43.csv"
 
 scenario_train_idle = pd.read_csv(path_scenario_train_idle,index_col=0,header=0,sep=';')
 scenario_train_parked = pd.read_csv(path_scenario_train_parked,index_col=0,header=0,sep=';')

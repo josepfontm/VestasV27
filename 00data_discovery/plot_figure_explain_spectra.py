@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 
 #Chnage paths if necessary
 
-file_PSD_u = '../code_methodology/psd_sum/df_psd_u.csv'
-file_PSD_15 = '../code_methodology/psd_sum/df_psd_15.csv'
-file_PSD_30 = '../code_methodology/psd_sum/df_psd_30.csv'
-file_PSD_45 = '../code_methodology/psd_sum/df_psd_45.csv'
-file_PSD_r = '../code_methodology/psd_sum/df_psd_r.csv'
+file_PSD_u = '../VestasV27/psd_sum/df_psd_u.csv'
+file_PSD_15 = '../VestasV27/psd_sum/df_psd_15.csv'
+file_PSD_30 = '../VestasV27/psd_sum/df_psd_30.csv'
+file_PSD_45 = '../VestasV27/psd_sum/df_psd_45.csv'
+file_PSD_r = '../VestasV27/psd_sum/df_psd_r.csv'
 
-file_metadata = '../code_methodology/original_data/metadata.csv'
+file_metadata = '../VestasV27/original_data/metadata.csv'
 
 psd_u = pd.read_csv(file_PSD_u, index_col = None, header = None)
 psd_15 = pd.read_csv(file_PSD_15, index_col = None, header = None)

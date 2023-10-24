@@ -20,12 +20,12 @@ def kl_plot(regression_model: str, threshold:float, n_pcs: int):
         Number of PCs to plot
     """
 
-    path_cdsf_idle = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle.csv"
-    path_cdsf_parked = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked.csv"
-    path_cdsf_t1 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1.csv"
-    path_cdsf_rpm32 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32.csv"
-    path_cdsf_t2 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2.csv"
-    path_cdsf_rpm43 = "../code_6modes/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43.csv"
+    path_cdsf_idle = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_idle.csv"
+    path_cdsf_parked = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_parked.csv"
+    path_cdsf_t1 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t1.csv"
+    path_cdsf_rpm32 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm32.csv"
+    path_cdsf_t2 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_t2.csv"
+    path_cdsf_rpm43 = "../VestasV27/03regression_analysis/02correction/" + regression_model +'/t'+str(threshold)+ "/corrected_dsf_rpm43.csv"
 
     cdsf_idle = pd.read_csv(path_cdsf_idle,index_col=0,header=0,sep=';')
     cdsf_parked = pd.read_csv(path_cdsf_parked,index_col=0,header=0,sep=';')
@@ -34,12 +34,12 @@ def kl_plot(regression_model: str, threshold:float, n_pcs: int):
     cdsf_t2 = pd.read_csv(path_cdsf_t2,index_col=0,header=0,sep=';')
     cdsf_rpm43 = pd.read_csv(path_cdsf_rpm43,index_col=0,header=0,sep=';')
 
-    path_scenario_idle = "../code_6modes/03regression_analysis/00standarized/scenario_idle.csv"
-    path_scenario_parked = "../code_6modes/03regression_analysis/00standarized/scenario_parked.csv"
-    path_scenario_t1 = "../code_6modes/03regression_analysis/00standarized/scenario_t1.csv"
-    path_scenario_rpm32 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm32.csv"
-    path_scenario_t2 = "../code_6modes/03regression_analysis/00standarized/scenario_t2.csv"
-    path_scenario_rpm43 = "../code_6modes/03regression_analysis/00standarized/scenario_rpm43.csv"
+    path_scenario_idle = "../VestasV27/03regression_analysis/00standarized/scenario_idle.csv"
+    path_scenario_parked = "../VestasV27/03regression_analysis/00standarized/scenario_parked.csv"
+    path_scenario_t1 = "../VestasV27/03regression_analysis/00standarized/scenario_t1.csv"
+    path_scenario_rpm32 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm32.csv"
+    path_scenario_t2 = "../VestasV27/03regression_analysis/00standarized/scenario_t2.csv"
+    path_scenario_rpm43 = "../VestasV27/03regression_analysis/00standarized/scenario_rpm43.csv"
 
     scenario_idle = pd.read_csv(path_scenario_idle,index_col=0,header=0,sep=';')
     scenario_parked = pd.read_csv(path_scenario_parked,index_col=0,header=0,sep=';')
@@ -48,12 +48,12 @@ def kl_plot(regression_model: str, threshold:float, n_pcs: int):
     scenario_t2 = pd.read_csv(path_scenario_t2,index_col=0,header=0,sep=';')
     scenario_rpm43 = pd.read_csv(path_scenario_rpm43,index_col=0,header=0,sep=';')
 
-    path_dsf_idle = 'D:/code_6modes/03regression_analysis/00standarized/dsf_idle.csv'
-    path_dsf_parked = 'D:/code_6modes/03regression_analysis/00standarized/dsf_parked.csv'
-    path_dsf_t1 = 'D:/code_6modes/03regression_analysis/00standarized/dsf_t1.csv'
-    path_dsf_rpm32 = 'D:/code_6modes/03regression_analysis/00standarized/dsf_rpm32.csv'
-    path_dsf_t2 = 'D:/code_6modes/03regression_analysis/00standarized/dsf_t2.csv'
-    path_dsf_rpm43 = 'D:/code_6modes/03regression_analysis/00standarized/dsf_rpm43.csv'
+    path_dsf_idle = 'D:/VestasV27/03regression_analysis/00standarized/dsf_idle.csv'
+    path_dsf_parked = 'D:/VestasV27/03regression_analysis/00standarized/dsf_parked.csv'
+    path_dsf_t1 = 'D:/VestasV27/03regression_analysis/00standarized/dsf_t1.csv'
+    path_dsf_rpm32 = 'D:/VestasV27/03regression_analysis/00standarized/dsf_rpm32.csv'
+    path_dsf_t2 = 'D:/VestasV27/03regression_analysis/00standarized/dsf_t2.csv'
+    path_dsf_rpm43 = 'D:/VestasV27/03regression_analysis/00standarized/dsf_rpm43.csv'
 
     dsf_idle = pd.read_csv(path_dsf_idle,index_col=0,sep=';')
     dsf_parked = pd.read_csv(path_dsf_parked,index_col=0,sep=';')

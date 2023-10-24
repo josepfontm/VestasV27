@@ -2,12 +2,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-path_psd_idle = '../code_6modes/01clean_data/results/psd_idle.csv'
-path_psd_parked = '../code_6modes/01clean_data/results/psd_parked.csv'
-path_psd_t1 = '../code_6modes/01clean_data/results/psd_t1.csv'
-path_psd_rpm32 = '../code_6modes/01clean_data/results/psd_rpm32.csv'
-path_psd_t2= '../code_6modes/01clean_data/results/psd_t2.csv'
-path_psd_rpm43 = '../code_6modes/01clean_data/results/psd_rpm43.csv'
+path_psd_idle = '../VestasV27/01clean_data/results/psd_idle.csv'
+path_psd_parked = '../VestasV27/01clean_data/results/psd_parked.csv'
+path_psd_t1 = '../VestasV27/01clean_data/results/psd_t1.csv'
+path_psd_rpm32 = '../VestasV27/01clean_data/results/psd_rpm32.csv'
+path_psd_t2= '../VestasV27/01clean_data/results/psd_t2.csv'
+path_psd_rpm43 = '../VestasV27/01clean_data/results/psd_rpm43.csv'
 
 psd_idle = pd.read_csv(path_psd_idle,index_col=0,sep=';')
 psd_parked = pd.read_csv(path_psd_parked,index_col=0,sep=';')

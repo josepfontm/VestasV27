@@ -29,19 +29,19 @@ def svr(threshold:float, plot_modes:list, plot_regression = False):
     """
 
     #Change paths if necessary
-    path_scenario_idle = 'F:/code_6modes/03regression_analysis/00standarized/scenario_idle.csv'
-    path_scenario_parked = 'F:/code_6modes/03regression_analysis/00standarized/scenario_parked.csv'
-    path_scenario_t1 = 'F:/code_6modes/03regression_analysis/00standarized/scenario_t1.csv'
-    path_scenario_rpm32 = 'F:/code_6modes/03regression_analysis/00standarized/scenario_rpm32.csv'
-    path_scenario_t2 = 'F:/code_6modes/03regression_analysis/00standarized/scenario_t2.csv'
-    path_scenario_rpm43 = 'F:/code_6modes/03regression_analysis/00standarized/scenario_rpm43.csv'
+    path_scenario_idle = 'F:/VestasV27/03regression_analysis/00standarized/scenario_idle.csv'
+    path_scenario_parked = 'F:/VestasV27/03regression_analysis/00standarized/scenario_parked.csv'
+    path_scenario_t1 = 'F:/VestasV27/03regression_analysis/00standarized/scenario_t1.csv'
+    path_scenario_rpm32 = 'F:/VestasV27/03regression_analysis/00standarized/scenario_rpm32.csv'
+    path_scenario_t2 = 'F:/VestasV27/03regression_analysis/00standarized/scenario_t2.csv'
+    path_scenario_rpm43 = 'F:/VestasV27/03regression_analysis/00standarized/scenario_rpm43.csv'
 
-    path_scenario_train_idle = 'F:/code_6modes/03regression_analysis/00standarized/scenario_train_idle.csv'
-    path_scenario_train_parked = 'F:/code_6modes/03regression_analysis/00standarized/scenario_train_parked.csv'
-    path_scenario_train_t1 = 'F:/code_6modes/03regression_analysis/00standarized/scenario_train_t1.csv'
-    path_scenario_train_rpm32 = 'F:/code_6modes/03regression_analysis/00standarized/scenario_train_rpm32.csv'
-    path_scenario_train_t2 = 'F:/code_6modes/03regression_analysis/00standarized/scenario_train_t2.csv'
-    path_scenario_train_rpm43 = 'F:/code_6modes/03regression_analysis/00standarized/scenario_train_rpm43.csv'
+    path_scenario_train_idle = 'F:/VestasV27/03regression_analysis/00standarized/scenario_train_idle.csv'
+    path_scenario_train_parked = 'F:/VestasV27/03regression_analysis/00standarized/scenario_train_parked.csv'
+    path_scenario_train_t1 = 'F:/VestasV27/03regression_analysis/00standarized/scenario_train_t1.csv'
+    path_scenario_train_rpm32 = 'F:/VestasV27/03regression_analysis/00standarized/scenario_train_rpm32.csv'
+    path_scenario_train_t2 = 'F:/VestasV27/03regression_analysis/00standarized/scenario_train_t2.csv'
+    path_scenario_train_rpm43 = 'F:/VestasV27/03regression_analysis/00standarized/scenario_train_rpm43.csv'
 
     scenario_idle = pd.read_csv(path_scenario_idle, index_col=0,sep=';')
     scenario_parked = pd.read_csv(path_scenario_parked, index_col=0,sep=';')
@@ -58,12 +58,12 @@ def svr(threshold:float, plot_modes:list, plot_regression = False):
     scenario_train_rpm43 = pd.read_csv(path_scenario_train_rpm43, index_col=0,sep=';')
 
     #Load paths for pc's environemntal data
-    path_pca_env_idle = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_idle.csv'
-    path_pca_env_parked = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_parked.csv'
-    path_pca_env_t1 = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_t1.csv'
-    path_pca_env_rpm32 = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_rpm32.csv'
-    path_pca_env_t2 = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_t2.csv'
-    path_pca_env_rpm43 = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_rpm43.csv'
+    path_pca_env_idle = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_idle.csv'
+    path_pca_env_parked = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_parked.csv'
+    path_pca_env_t1 = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_t1.csv'
+    path_pca_env_rpm32 = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_rpm32.csv'
+    path_pca_env_t2 = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_t2.csv'
+    path_pca_env_rpm43 = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_rpm43.csv'
 
     pca_env_idle = pd.read_csv(path_pca_env_idle,index_col=0,sep=';')
     pca_env_parked = pd.read_csv(path_pca_env_parked,index_col=0,sep=';')
@@ -72,12 +72,12 @@ def svr(threshold:float, plot_modes:list, plot_regression = False):
     pca_env_t2 = pd.read_csv(path_pca_env_t2,index_col=0,sep=';')
     pca_env_rpm43 = pd.read_csv(path_pca_env_rpm43,index_col=0,sep=';')
 
-    path_pca_env_train_idle = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_train_idle.csv'
-    path_pca_env_train_parked = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_train_parked.csv'
-    path_pca_env_train_t1 = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_train_t1.csv'
-    path_pca_env_train_rpm32 = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_train_rpm32.csv'
-    path_pca_env_train_t2 = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_train_t2.csv'
-    path_pca_env_train_rpm43 = 'F:/code_6modes/03regression_analysis/00standarized/pca_env_train_rpm43.csv'
+    path_pca_env_train_idle = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_train_idle.csv'
+    path_pca_env_train_parked = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_train_parked.csv'
+    path_pca_env_train_t1 = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_train_t1.csv'
+    path_pca_env_train_rpm32 = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_train_rpm32.csv'
+    path_pca_env_train_t2 = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_train_t2.csv'
+    path_pca_env_train_rpm43 = 'F:/VestasV27/03regression_analysis/00standarized/pca_env_train_rpm43.csv'
 
     pca_env_train_idle = pd.read_csv(path_pca_env_train_idle,index_col=0,sep=';')
     pca_env_train_parked = pd.read_csv(path_pca_env_train_parked,index_col=0,sep=';')
@@ -87,19 +87,19 @@ def svr(threshold:float, plot_modes:list, plot_regression = False):
     pca_env_train_rpm43 = pd.read_csv(path_pca_env_train_rpm43,index_col=0,sep=';')
 
     #Load paths for pc's operational data
-    path_pca_op_idle = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_idle.csv'
-    path_pca_op_parked = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_parked.csv'
-    path_pca_op_t1 = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_t1.csv'
-    path_pca_op_rpm32 = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_rpm32.csv'
-    path_pca_op_t2 = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_t2.csv'
-    path_pca_op_rpm43 = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_rpm43.csv'
+    path_pca_op_idle = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_idle.csv'
+    path_pca_op_parked = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_parked.csv'
+    path_pca_op_t1 = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_t1.csv'
+    path_pca_op_rpm32 = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_rpm32.csv'
+    path_pca_op_t2 = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_t2.csv'
+    path_pca_op_rpm43 = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_rpm43.csv'
 
-    path_pca_op_train_idle = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_train_idle.csv'
-    path_pca_op_train_parked = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_train_parked.csv'
-    path_pca_op_train_t1 = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_train_t1.csv'
-    path_pca_op_train_rpm32 = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_train_rpm32.csv'
-    path_pca_op_train_t2 = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_train_t2.csv'
-    path_pca_op_train_rpm43 = 'F:/code_6modes/03regression_analysis/00standarized/pca_op_train_rpm43.csv'
+    path_pca_op_train_idle = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_train_idle.csv'
+    path_pca_op_train_parked = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_train_parked.csv'
+    path_pca_op_train_t1 = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_train_t1.csv'
+    path_pca_op_train_rpm32 = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_train_rpm32.csv'
+    path_pca_op_train_t2 = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_train_t2.csv'
+    path_pca_op_train_rpm43 = 'F:/VestasV27/03regression_analysis/00standarized/pca_op_train_rpm43.csv'
 
     pca_op_idle = pd.read_csv(path_pca_op_idle,index_col=0,sep=';')
     pca_op_parked = pd.read_csv(path_pca_op_parked,index_col=0,sep=';')
@@ -131,12 +131,12 @@ def svr(threshold:float, plot_modes:list, plot_regression = False):
     pca_train_rpm43 = pd.concat([pca_env_train_rpm43,pca_op_train_rpm43],axis=1)
 
     #Paths damage-sensitive features
-    path_dsf_idle = 'F:/code_6modes/03regression_analysis/00standarized/dsf_idle.csv'
-    path_dsf_parked = 'F:/code_6modes/03regression_analysis/00standarized/dsf_parked.csv'
-    path_dsf_t1 = 'F:/code_6modes/03regression_analysis/00standarized/dsf_t1.csv'
-    path_dsf_rpm32 = 'F:/code_6modes/03regression_analysis/00standarized/dsf_rpm32.csv'
-    path_dsf_t2 = 'F:/code_6modes/03regression_analysis/00standarized/dsf_t2.csv'
-    path_dsf_rpm43 = 'F:/code_6modes/03regression_analysis/00standarized/dsf_rpm43.csv'
+    path_dsf_idle = 'F:/VestasV27/03regression_analysis/00standarized/dsf_idle.csv'
+    path_dsf_parked = 'F:/VestasV27/03regression_analysis/00standarized/dsf_parked.csv'
+    path_dsf_t1 = 'F:/VestasV27/03regression_analysis/00standarized/dsf_t1.csv'
+    path_dsf_rpm32 = 'F:/VestasV27/03regression_analysis/00standarized/dsf_rpm32.csv'
+    path_dsf_t2 = 'F:/VestasV27/03regression_analysis/00standarized/dsf_t2.csv'
+    path_dsf_rpm43 = 'F:/VestasV27/03regression_analysis/00standarized/dsf_rpm43.csv'
 
     dsf_idle = pd.read_csv(path_dsf_idle,index_col=0,sep=';')
     dsf_parked = pd.read_csv(path_dsf_parked,index_col=0,sep=';')
@@ -145,12 +145,12 @@ def svr(threshold:float, plot_modes:list, plot_regression = False):
     dsf_t2 = pd.read_csv(path_dsf_t2,index_col=0,sep=';')
     dsf_rpm43 = pd.read_csv(path_dsf_rpm43,index_col=0,sep=';')
 
-    path_dsf_train_idle = 'F:/code_6modes/03regression_analysis/00standarized/dsf_train_idle.csv'
-    path_dsf_train_parked = 'F:/code_6modes/03regression_analysis/00standarized/dsf_train_parked.csv'
-    path_dsf_train_t1 = 'F:/code_6modes/03regression_analysis/00standarized/dsf_train_t1.csv'
-    path_dsf_train_rpm32 = 'F:/code_6modes/03regression_analysis/00standarized/dsf_train_rpm32.csv'
-    path_dsf_train_t2 = 'F:/code_6modes/03regression_analysis/00standarized/dsf_train_t2.csv'
-    path_dsf_train_rpm43 = 'F:/code_6modes/03regression_analysis/00standarized/dsf_train_rpm43.csv'
+    path_dsf_train_idle = 'F:/VestasV27/03regression_analysis/00standarized/dsf_train_idle.csv'
+    path_dsf_train_parked = 'F:/VestasV27/03regression_analysis/00standarized/dsf_train_parked.csv'
+    path_dsf_train_t1 = 'F:/VestasV27/03regression_analysis/00standarized/dsf_train_t1.csv'
+    path_dsf_train_rpm32 = 'F:/VestasV27/03regression_analysis/00standarized/dsf_train_rpm32.csv'
+    path_dsf_train_t2 = 'F:/VestasV27/03regression_analysis/00standarized/dsf_train_t2.csv'
+    path_dsf_train_rpm43 = 'F:/VestasV27/03regression_analysis/00standarized/dsf_train_rpm43.csv'
 
     dsf_train_idle = pd.read_csv(path_dsf_train_idle,index_col=0,sep=';')
     dsf_train_parked = pd.read_csv(path_dsf_train_parked,index_col=0,sep=';')
@@ -245,8 +245,8 @@ def svr(threshold:float, plot_modes:list, plot_regression = False):
                 plt.show()
 
         print('Save files ' + str(file_mode))
-        dsf_mode.to_csv('F:/code_6modes/03regression_analysis/02correction/svr'+'/t'+str(threshold)+'/corrected_dsf_'+file_mode+'.csv',sep=';')
-        dsf_train_mode.to_csv('F:/code_6modes/03regression_analysis/02correction/svr'+'/t'+str(threshold)+'/corrected_dsf_'+file_mode+'_train.csv',sep=';')
+        dsf_mode.to_csv('F:/VestasV27/03regression_analysis/02correction/svr'+'/t'+str(threshold)+'/corrected_dsf_'+file_mode+'.csv',sep=';')
+        dsf_train_mode.to_csv('F:/VestasV27/03regression_analysis/02correction/svr'+'/t'+str(threshold)+'/corrected_dsf_'+file_mode+'_train.csv',sep=';')
 
     print('done')
 

@@ -8,19 +8,19 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 #Change paths if necessary
-path_metadata_idle = '../code_6modes/01clean_data/results/metadata_idle.csv'
-path_metadata_parked = '../code_6modes/01clean_data/results/metadata_parked.csv'
-path_metadata_t1 = '../code_6modes/01clean_data/results/metadata_t1.csv'
-path_metadata_rpm32 = '../code_6modes/01clean_data/results/metadata_rpm32.csv'
-path_metadata_t2 = '../code_6modes/01clean_data/results/metadata_t2.csv'
-path_metadata_rpm43 = '../code_6modes/01clean_data/results/metadata_rpm43.csv'
+path_metadata_idle = '../VestasV27/01clean_data/results/metadata_idle.csv'
+path_metadata_parked = '../VestasV27/01clean_data/results/metadata_parked.csv'
+path_metadata_t1 = '../VestasV27/01clean_data/results/metadata_t1.csv'
+path_metadata_rpm32 = '../VestasV27/01clean_data/results/metadata_rpm32.csv'
+path_metadata_t2 = '../VestasV27/01clean_data/results/metadata_t2.csv'
+path_metadata_rpm43 = '../VestasV27/01clean_data/results/metadata_rpm43.csv'
 
-path_psd_idle = '../code_6modes/01clean_data/results/psd_idle.csv'
-path_psd_parked = '../code_6modes/01clean_data/results/psd_parked.csv'
-path_psd_t1 = '../code_6modes/01clean_data/results/psd_t1.csv'
-path_psd_rpm32 = '../code_6modes/01clean_data/results/psd_rpm32.csv'
-path_psd_t2 = '../code_6modes/01clean_data/results/psd_t2.csv'
-path_psd_rpm43 = '../code_6modes/01clean_data/results/psd_rpm43.csv'
+path_psd_idle = '../VestasV27/01clean_data/results/psd_idle.csv'
+path_psd_parked = '../VestasV27/01clean_data/results/psd_parked.csv'
+path_psd_t1 = '../VestasV27/01clean_data/results/psd_t1.csv'
+path_psd_rpm32 = '../VestasV27/01clean_data/results/psd_rpm32.csv'
+path_psd_t2 = '../VestasV27/01clean_data/results/psd_t2.csv'
+path_psd_rpm43 = '../VestasV27/01clean_data/results/psd_rpm43.csv'
 
 #Generate Panda DataFrames and convert to numpy arrays
 metadata_idle = pd.read_csv(path_metadata_idle,index_col=0,sep=';').reset_index()
@@ -96,12 +96,12 @@ ds_rpm32 = pd.concat([metadata_rpm32.DamageScenario, metadata_rpm32.Date, metada
 ds_t2 = pd.concat([metadata_t2.DamageScenario, metadata_t2.Date, metadata_t2.Temperature], axis=1)
 ds_rpm43 = pd.concat([metadata_rpm43.DamageScenario, metadata_rpm43.Date, metadata_rpm43.Temperature], axis=1)
 
-ds_idle.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_idle.csv',sep=';')
-ds_parked.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_parked.csv',sep=';')
-ds_t1.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_t1.csv',sep=';')
-ds_rpm32.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_rpm32.csv',sep=';')
-ds_t2.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_t2.csv',sep=';')
-ds_rpm43.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_rpm43.csv',sep=';')
+ds_idle.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_idle.csv',sep=';')
+ds_parked.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_parked.csv',sep=';')
+ds_t1.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_t1.csv',sep=';')
+ds_rpm32.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_rpm32.csv',sep=';')
+ds_t2.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_t2.csv',sep=';')
+ds_rpm43.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_rpm43.csv',sep=';')
 
 print('Shapes')
 print(np.shape(psd_parked))
@@ -130,12 +130,12 @@ ds_train_rpm32 = pd.concat([metadata_rpm32_repaired.DamageScenario, metadata_rpm
 ds_train_t2 = pd.concat([metadata_t2_repaired.DamageScenario, metadata_t2_repaired.Date, metadata_t2_repaired.Temperature], axis=1)
 ds_train_rpm43 = pd.concat([metadata_rpm43_repaired.DamageScenario, metadata_rpm43_repaired.Date, metadata_rpm43_repaired.Temperature], axis=1)
 
-ds_train_idle.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_train_idle.csv',sep=';')
-ds_train_parked.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_train_parked.csv',sep=';')
-ds_train_t1.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_train_t1.csv',sep=';')
-ds_train_rpm32.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_train_rpm32.csv',sep=';')
-ds_train_t2.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_train_t2.csv',sep=';')
-ds_train_rpm43.to_csv('../code_6modes/02dimensionality_reduction/results/scenario_train_rpm43.csv',sep=';')
+ds_train_idle.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_train_idle.csv',sep=';')
+ds_train_parked.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_train_parked.csv',sep=';')
+ds_train_t1.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_train_t1.csv',sep=';')
+ds_train_rpm32.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_train_rpm32.csv',sep=';')
+ds_train_t2.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_train_t2.csv',sep=';')
+ds_train_rpm43.to_csv('../VestasV27/02dimensionality_reduction/results/scenario_train_rpm43.csv',sep=';')
 
 #Training data only using samples from repaired data (Unsupervised manner)
 psd_train = pd.concat([psd_idle_repaired, psd_parked_repaired], axis=0)
@@ -166,12 +166,12 @@ env_rpm32 = metadata_rpm32.loc[:,["Wind","WindDirection","Temperature"]].to_nump
 env_t2 = metadata_t2.loc[:,["Wind","WindDirection","Temperature"]].to_numpy()
 env_rpm43 = metadata_rpm43.loc[:,["Wind","WindDirection","Temperature"]].to_numpy()
 
-np.savetxt('../code_6modes/02dimensionality_reduction/results/env_idle.csv', env_idle, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/env_parked.csv', env_parked, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/env_t1.csv', env_t1, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/env_rpm32.csv', env_rpm32, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/env_t2.csv', env_t2, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/env_rpm43.csv', env_rpm43, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/env_idle.csv', env_idle, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/env_parked.csv', env_parked, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/env_t1.csv', env_t1, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/env_rpm32.csv', env_rpm32, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/env_t2.csv', env_t2, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/env_rpm43.csv', env_rpm43, delimiter = ';')
 
 env_train_idle = metadata_idle_repaired.loc[:,["Wind","WindDirection","Temperature"]].to_numpy()
 env_train_parked = metadata_parked_repaired.loc[:,["Wind","WindDirection","Temperature"]].to_numpy()
@@ -236,12 +236,12 @@ op_rpm32 = metadata_rpm32.loc[:,["PitchMean","PitchStd","PitchMin","PitchMax","R
 op_t2 = metadata_t2.loc[:,["PitchMean","PitchStd","PitchMin","PitchMax","RPM"]].to_numpy()
 op_rpm43 = metadata_rpm43.loc[:,["PitchMean","PitchStd","PitchMin","PitchMax","RPM"]].to_numpy()
 
-np.savetxt('../code_6modes/02dimensionality_reduction/results/op_idle.csv', op_idle, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/op_parked.csv', op_parked, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/op_t1.csv', op_t1, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/op_rpm32.csv', op_rpm32, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/op_t2.csv', op_t2, delimiter = ';')
-np.savetxt('../code_6modes/02dimensionality_reduction/results/op_rpm43.csv', op_rpm43, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/op_idle.csv', op_idle, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/op_parked.csv', op_parked, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/op_t1.csv', op_t1, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/op_rpm32.csv', op_rpm32, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/op_t2.csv', op_t2, delimiter = ';')
+np.savetxt('../VestasV27/02dimensionality_reduction/results/op_rpm43.csv', op_rpm43, delimiter = ';')
 
 op_scaler = StandardScaler()
 
@@ -363,203 +363,203 @@ dsf_train_rpm43 = pca_psd.transform(psd_rpm43_train_norm)
 list_pc = list(range(np.shape(dsf_idle)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_idle = pd.DataFrame(dsf_idle, columns=list_pc)
-dsf_idle.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_idle.csv', sep=';')
+dsf_idle.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_idle.csv', sep=';')
 
 list_pc = list(range(np.shape(dsf_train_idle)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_train_idle = pd.DataFrame(dsf_train_idle, columns=list_pc)
-dsf_train_idle.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_train_idle.csv', sep=';')
+dsf_train_idle.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_train_idle.csv', sep=';')
 
 #operational_data
 list_pc = list(range(np.shape(pca_op_idle)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_idle = pd.DataFrame(pca_op_idle, columns=list_pc)
-pca_op_idle.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_idle.csv', sep=';')
+pca_op_idle.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_idle.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_op_train_idle)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_train_idle = pd.DataFrame(pca_op_train_idle, columns=list_pc)
-pca_op_train_idle.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_train_idle.csv', sep=';')
+pca_op_train_idle.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_train_idle.csv', sep=';')
 
 #envrionmental data
 list_pc = list(range(np.shape(pca_env_idle)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_idle = pd.DataFrame(pca_env_idle, columns=list_pc)
-pca_env_idle.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_idle.csv', sep=';')
+pca_env_idle.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_idle.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_env_train_idle)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_train_idle = pd.DataFrame(pca_env_train_idle, columns=list_pc)
-pca_env_train_idle.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_train_idle.csv', sep=';')
+pca_env_train_idle.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_train_idle.csv', sep=';')
 
 #---PARKED---
 #damage sensitive features
 list_pc = list(range(np.shape(dsf_parked)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_parked = pd.DataFrame(dsf_parked, columns=list_pc)
-dsf_parked.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_parked.csv', sep=';')
+dsf_parked.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_parked.csv', sep=';')
 
 list_pc = list(range(np.shape(dsf_train_parked)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_train_parked = pd.DataFrame(dsf_train_parked, columns=list_pc)
-dsf_train_parked.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_train_parked.csv', sep=';')
+dsf_train_parked.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_train_parked.csv', sep=';')
 
 #operational_data
 list_pc = list(range(np.shape(pca_op_parked)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_parked = pd.DataFrame(pca_op_parked, columns=list_pc)
-pca_op_parked.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_parked.csv', sep=';')
+pca_op_parked.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_parked.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_op_train_parked)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_train_parked = pd.DataFrame(pca_op_train_parked, columns=list_pc)
-pca_op_train_parked.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_train_parked.csv', sep=';')
+pca_op_train_parked.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_train_parked.csv', sep=';')
 
 #envrionmental data
 list_pc = list(range(np.shape(pca_env_parked)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_parked = pd.DataFrame(pca_env_parked, columns=list_pc)
-pca_env_parked.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_parked.csv', sep=';')
+pca_env_parked.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_parked.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_env_train_parked)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_train_parked = pd.DataFrame(pca_env_train_parked, columns=list_pc)
-pca_env_train_parked.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_train_parked.csv', sep=';')
+pca_env_train_parked.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_train_parked.csv', sep=';')
 
 #---T1---
 #damage sensitive features
 list_pc = list(range(np.shape(dsf_t1)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_t1 = pd.DataFrame(dsf_t1, columns=list_pc)
-dsf_t1.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_t1.csv', sep=';')
+dsf_t1.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_t1.csv', sep=';')
 
 list_pc = list(range(np.shape(dsf_train_t1)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_train_t1 = pd.DataFrame(dsf_train_t1, columns=list_pc)
-dsf_train_t1.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_train_t1.csv', sep=';')
+dsf_train_t1.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_train_t1.csv', sep=';')
 
 #operational_data
 list_pc = list(range(np.shape(pca_op_t1)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_t1 = pd.DataFrame(pca_op_t1, columns=list_pc)
-pca_op_t1.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_t1.csv', sep=';')
+pca_op_t1.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_t1.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_op_train_t1)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_train_t1 = pd.DataFrame(pca_op_train_t1, columns=list_pc)
-pca_op_train_t1.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_train_t1.csv', sep=';')
+pca_op_train_t1.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_train_t1.csv', sep=';')
 
 #envrionmental data
 list_pc = list(range(np.shape(pca_env_t1)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_t1 = pd.DataFrame(pca_env_t1, columns=list_pc)
-pca_env_t1.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_t1.csv', sep=';')
+pca_env_t1.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_t1.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_env_train_t1)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_train_t1 = pd.DataFrame(pca_env_train_t1, columns=list_pc)
-pca_env_train_t1.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_train_t1.csv', sep=';')
+pca_env_train_t1.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_train_t1.csv', sep=';')
 
 #RPM32
 #damage sensitive features
 list_pc = list(range(np.shape(dsf_rpm32)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_rpm32 = pd.DataFrame(dsf_rpm32, columns=list_pc)
-dsf_rpm32.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_rpm32.csv', sep=';')
+dsf_rpm32.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_rpm32.csv', sep=';')
 
 list_pc = list(range(np.shape(dsf_train_rpm32)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_train_rpm32 = pd.DataFrame(dsf_train_rpm32, columns=list_pc)
-dsf_train_rpm32.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_train_rpm32.csv', sep=';')
+dsf_train_rpm32.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_train_rpm32.csv', sep=';')
 
 #operational_data
 list_pc = list(range(np.shape(pca_op_rpm32)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_rpm32 = pd.DataFrame(pca_op_rpm32, columns=list_pc)
-pca_op_rpm32.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_rpm32.csv', sep=';')
+pca_op_rpm32.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_rpm32.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_op_train_rpm32)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_train_rpm32 = pd.DataFrame(pca_op_train_rpm32, columns=list_pc)
-pca_op_train_rpm32.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_train_rpm32.csv', sep=';')
+pca_op_train_rpm32.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_train_rpm32.csv', sep=';')
 
 #envrionmental data
 list_pc = list(range(np.shape(pca_env_rpm32)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_rpm32 = pd.DataFrame(pca_env_rpm32, columns=list_pc)
-pca_env_rpm32.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_rpm32.csv', sep=';')
+pca_env_rpm32.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_rpm32.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_env_train_rpm32)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_train_rpm32 = pd.DataFrame(pca_env_train_rpm32, columns=list_pc)
-pca_env_train_rpm32.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_train_rpm32.csv', sep=';')
+pca_env_train_rpm32.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_train_rpm32.csv', sep=';')
 
 #T2
 #damage sensitive features
 list_pc = list(range(np.shape(dsf_t2)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_t2 = pd.DataFrame(dsf_t2, columns=list_pc)
-dsf_t2.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_t2.csv', sep=';')
+dsf_t2.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_t2.csv', sep=';')
 
 list_pc = list(range(np.shape(dsf_train_t2)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_train_t2 = pd.DataFrame(dsf_train_t2, columns=list_pc)
-dsf_train_t2.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_train_t2.csv', sep=';')
+dsf_train_t2.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_train_t2.csv', sep=';')
 
 #operational_data
 list_pc = list(range(np.shape(pca_op_t2)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_t2 = pd.DataFrame(pca_op_t2, columns=list_pc)
-pca_op_t2.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_t2.csv', sep=';')
+pca_op_t2.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_t2.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_op_train_t2)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_train_t2 = pd.DataFrame(pca_op_train_t2, columns=list_pc)
-pca_op_train_t2.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_train_t2.csv', sep=';')
+pca_op_train_t2.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_train_t2.csv', sep=';')
 
 #envrionmental data
 list_pc = list(range(np.shape(pca_env_t2)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_t2 = pd.DataFrame(pca_env_t2, columns=list_pc)
-pca_env_t2.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_t2.csv', sep=';')
+pca_env_t2.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_t2.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_env_train_t2)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_train_t2 = pd.DataFrame(pca_env_train_t2, columns=list_pc)
-pca_env_train_t2.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_train_t2.csv', sep=';')
+pca_env_train_t2.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_train_t2.csv', sep=';')
 
 #RPM43
 #damage sensitive features
 list_pc = list(range(np.shape(dsf_rpm43)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_rpm43 = pd.DataFrame(dsf_rpm43, columns=list_pc)
-dsf_rpm43.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_rpm43.csv', sep=';')
+dsf_rpm43.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_rpm43.csv', sep=';')
 
 list_pc = list(range(np.shape(dsf_train_rpm43)[1]))
 list_pc = list(map(lambda x: "PC" + str(x), list_pc))
 dsf_train_rpm43 = pd.DataFrame(dsf_train_rpm43, columns=list_pc)
-dsf_train_rpm43.to_csv('../code_6modes/02dimensionality_reduction/results/dsf_train_rpm43.csv', sep=';')
+dsf_train_rpm43.to_csv('../VestasV27/02dimensionality_reduction/results/dsf_train_rpm43.csv', sep=';')
 
 #operational_data
 list_pc = list(range(np.shape(pca_op_rpm43)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_rpm43 = pd.DataFrame(pca_op_rpm43, columns=list_pc)
-pca_op_rpm43.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_rpm43.csv', sep=';')
+pca_op_rpm43.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_rpm43.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_op_train_rpm43)[1]))
 list_pc = list(map(lambda x: "OP" + str(x), list_pc))
 pca_op_train_rpm43 = pd.DataFrame(pca_op_train_rpm43, columns=list_pc)
-pca_op_train_rpm43.to_csv('../code_6modes/02dimensionality_reduction/results/pca_op_train_rpm43.csv', sep=';')
+pca_op_train_rpm43.to_csv('../VestasV27/02dimensionality_reduction/results/pca_op_train_rpm43.csv', sep=';')
 
 #envrionmental data
 list_pc = list(range(np.shape(pca_env_rpm43)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_rpm_43 = pd.DataFrame(pca_env_rpm43, columns=list_pc)
-pca_env_rpm_43.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_rpm43.csv', sep=';')
+pca_env_rpm_43.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_rpm43.csv', sep=';')
 
 list_pc = list(range(np.shape(pca_env_train_rpm43)[1]))
 list_pc = list(map(lambda x: "ENV" + str(x), list_pc))
 pca_env_train_rpm_43 = pd.DataFrame(pca_env_train_rpm43, columns=list_pc)
-pca_env_train_rpm_43.to_csv('../code_6modes/02dimensionality_reduction/results/pca_env_train_rpm43.csv', sep=';')
+pca_env_train_rpm_43.to_csv('../VestasV27/02dimensionality_reduction/results/pca_env_train_rpm43.csv', sep=';')
 
 print('Done')

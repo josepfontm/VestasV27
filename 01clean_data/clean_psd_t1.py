@@ -4,13 +4,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Chnage paths if necessary
-path_psd_u = '../code_6modes/original_data/df_psd_u.csv'
-path_psd_15 = '../code_6modes/original_data/df_psd_15.csv'
-path_psd_30 = '../code_6modes/original_data/df_psd_30.csv'
-path_psd_45 = '../code_6modes/original_data/df_psd_45.csv'
-path_psd_r = '../code_6modes/original_data/df_psd_r.csv'
+path_psd_u = '../VestasV27/original_data/df_psd_u.csv'
+path_psd_15 = '../VestasV27/original_data/df_psd_15.csv'
+path_psd_30 = '../VestasV27/original_data/df_psd_30.csv'
+path_psd_45 = '../VestasV27/original_data/df_psd_45.csv'
+path_psd_r = '../VestasV27/original_data/df_psd_r.csv'
 
-path_metadata = '../code_6modes/original_data/metadata.csv'
+path_metadata = '../VestasV27/original_data/metadata.csv'
 
 psd_u = pd.read_csv(path_psd_u,index_col=0)
 psd_15 = pd.read_csv(path_psd_15,index_col=0)
@@ -77,8 +77,8 @@ psd_t1 = df_t1.loc[:,keys_psd]
 metadata_t1 = df_t1.loc[:,keys_metadata[1:]]
 
 #Save results
-psd_t1.to_csv('../code_6modes/01clean_data/results/psd_t1.csv',sep=';')
-metadata_t1.to_csv('../code_6modes/01clean_data/results/metadata_t1.csv',sep=';')
+psd_t1.to_csv('../VestasV27/01clean_data/results/psd_t1.csv',sep=';')
+metadata_t1.to_csv('../VestasV27/01clean_data/results/metadata_t1.csv',sep=';')
 
 psd_t1 = psd_t1.to_numpy()
 

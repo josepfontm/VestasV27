@@ -3,12 +3,12 @@ from sklearn.metrics import r2_score
 from sklearn.feature_selection import mutual_info_regression
 import matplotlib.pyplot as plt
 
-path_env_idle = '../code_6modes/02dimensionality_reduction/results/env_idle.csv'
-path_env_parked = '../code_6modes/02dimensionality_reduction/results/env_parked.csv'
-path_env_t1 = '../code_6modes/02dimensionality_reduction/results/env_t1.csv'
-path_env_rpm32 = '../code_6modes/02dimensionality_reduction/results/env_rpm32.csv'
-path_env_t2= '../code_6modes/02dimensionality_reduction/results/env_t2.csv'
-path_env_rpm43 = '../code_6modes/02dimensionality_reduction/results/env_rpm43.csv'
+path_env_idle = '../VestasV27/02dimensionality_reduction/results/env_idle.csv'
+path_env_parked = '../VestasV27/02dimensionality_reduction/results/env_parked.csv'
+path_env_t1 = '../VestasV27/02dimensionality_reduction/results/env_t1.csv'
+path_env_rpm32 = '../VestasV27/02dimensionality_reduction/results/env_rpm32.csv'
+path_env_t2= '../VestasV27/02dimensionality_reduction/results/env_t2.csv'
+path_env_rpm43 = '../VestasV27/02dimensionality_reduction/results/env_rpm43.csv'
 
 env_idle = pd.read_csv(path_env_idle,index_col=None,header=None,sep=';')
 env_parked = pd.read_csv(path_env_parked,index_col=None,header=None,sep=';')
@@ -17,12 +17,12 @@ env_rpm32 = pd.read_csv(path_env_rpm32,index_col=None,header=None,sep=';')
 env_t2 = pd.read_csv(path_env_t2,index_col=None,header=None,sep=';')
 env_rpm43 = pd.read_csv(path_env_rpm43,index_col=None,header=None,sep=';')
 
-path_op_idle = '../code_6modes/02dimensionality_reduction/results/op_idle.csv'
-path_op_parked = '../code_6modes/02dimensionality_reduction/results/op_parked.csv'
-path_op_t1 = '../code_6modes/02dimensionality_reduction/results/op_t1.csv'
-path_op_rpm32 = '../code_6modes/02dimensionality_reduction/results/op_rpm32.csv'
-path_op_t2= '../code_6modes/02dimensionality_reduction/results/op_t2.csv'
-path_op_rpm43 = '../code_6modes/02dimensionality_reduction/results/op_rpm43.csv'
+path_op_idle = '../VestasV27/02dimensionality_reduction/results/op_idle.csv'
+path_op_parked = '../VestasV27/02dimensionality_reduction/results/op_parked.csv'
+path_op_t1 = '../VestasV27/02dimensionality_reduction/results/op_t1.csv'
+path_op_rpm32 = '../VestasV27/02dimensionality_reduction/results/op_rpm32.csv'
+path_op_t2= '../VestasV27/02dimensionality_reduction/results/op_t2.csv'
+path_op_rpm43 = '../VestasV27/02dimensionality_reduction/results/op_rpm43.csv'
 
 op_idle = pd.read_csv(path_op_idle,index_col=None,header=None,sep=';')
 op_parked = pd.read_csv(path_op_parked,index_col=None,header=None,sep=';')
@@ -31,12 +31,12 @@ op_rpm32 = pd.read_csv(path_op_rpm32,index_col=None,header=None,sep=';')
 op_t2 = pd.read_csv(path_op_t2,index_col=None,header=None,sep=';')
 op_rpm43 = pd.read_csv(path_op_rpm43,index_col=None,header=None,sep=';')
 
-path_pca_op_idle = '../code_6modes/02dimensionality_reduction/results/pca_op_idle.csv'
-path_pca_op_parked = '../code_6modes/02dimensionality_reduction/results/pca_op_parked.csv'
-path_pca_op_t1 = '../code_6modes/02dimensionality_reduction/results/pca_op_t1.csv'
-path_pca_op_rpm32 = '../code_6modes/02dimensionality_reduction/results/pca_op_rpm32.csv'
-path_pca_op_t2 = '../code_6modes/02dimensionality_reduction/results/pca_op_t2.csv'
-path_pca_op_rpm43 = '../code_6modes/02dimensionality_reduction/results/pca_op_rpm43.csv'
+path_pca_op_idle = '../VestasV27/02dimensionality_reduction/results/pca_op_idle.csv'
+path_pca_op_parked = '../VestasV27/02dimensionality_reduction/results/pca_op_parked.csv'
+path_pca_op_t1 = '../VestasV27/02dimensionality_reduction/results/pca_op_t1.csv'
+path_pca_op_rpm32 = '../VestasV27/02dimensionality_reduction/results/pca_op_rpm32.csv'
+path_pca_op_t2 = '../VestasV27/02dimensionality_reduction/results/pca_op_t2.csv'
+path_pca_op_rpm43 = '../VestasV27/02dimensionality_reduction/results/pca_op_rpm43.csv'
 
 pca_op_idle = pd.read_csv(path_pca_op_idle,index_col=0,sep=';').reset_index()
 pca_op_parked = pd.read_csv(path_pca_op_parked,index_col=0,sep=';').reset_index()
@@ -45,12 +45,12 @@ pca_op_rpm32 = pd.read_csv(path_pca_op_rpm32,index_col=0,sep=';').reset_index()
 pca_op_t2 = pd.read_csv(path_pca_op_t2,index_col=0,sep=';').reset_index()
 pca_op_rpm43 = pd.read_csv(path_pca_op_rpm43,index_col=0,sep=';').reset_index()
 
-path_pca_env_idle = '../code_6modes/02dimensionality_reduction/results/pca_env_idle.csv'
-path_pca_env_parked = '../code_6modes/02dimensionality_reduction/results/pca_env_parked.csv'
-path_pca_env_t1 = '../code_6modes/02dimensionality_reduction/results/pca_env_t1.csv'
-path_pca_env_rpm32 = '../code_6modes/02dimensionality_reduction/results/pca_env_rpm32.csv'
-path_pca_env_t2 = '../code_6modes/02dimensionality_reduction/results/pca_env_t2.csv'
-path_pca_env_rpm43 = '../code_6modes/02dimensionality_reduction/results/pca_env_rpm43.csv'
+path_pca_env_idle = '../VestasV27/02dimensionality_reduction/results/pca_env_idle.csv'
+path_pca_env_parked = '../VestasV27/02dimensionality_reduction/results/pca_env_parked.csv'
+path_pca_env_t1 = '../VestasV27/02dimensionality_reduction/results/pca_env_t1.csv'
+path_pca_env_rpm32 = '../VestasV27/02dimensionality_reduction/results/pca_env_rpm32.csv'
+path_pca_env_t2 = '../VestasV27/02dimensionality_reduction/results/pca_env_t2.csv'
+path_pca_env_rpm43 = '../VestasV27/02dimensionality_reduction/results/pca_env_rpm43.csv'
 
 pca_env_idle = pd.read_csv(path_pca_env_idle,index_col=0,sep=';').reset_index()
 pca_env_parked = pd.read_csv(path_pca_env_parked,index_col=0,sep=';').reset_index()

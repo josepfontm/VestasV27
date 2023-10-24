@@ -1,18 +1,23 @@
 import pandas as pd
 import numpy as np
-from sklearn.neighbors import KNeighborsRegressor
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
-from sklearn.model_selection import train_test_split,GridSearchCV
-import math
+from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
 
-def knn(threshold:float, plot_modes:list, plot_regression = False):
+
+def polynomial_regression(max_order: int, threshold:float, plot_modes:list, plot_regression = False):
     
     """
-    Perform support vector regresion.
+    Perform polynomial regression for a specified order, usually between 1 and 3.
+    Higher orders are usually not required.
     
     Parameters
     ----------
+    max_order : integer
+        The order of the polynomial regression, if 1 lineal regression.
+
     threshold: float
         DSFs are only corrected if the R^2 is higher than the threshold defined.
         If DSFs has high correlation with multiple PCs (Env and Op) the highest is used to correct DSF.
@@ -186,58 +191,65 @@ def knn(threshold:float, plot_modes:list, plot_regression = False):
     s = 3 #Size dots scatter
 
     for r2_mode,dsf_mode,dsf_train_mode,pca_mode,pca_train_mode,file_mode,scenario in zip(r2_modes,dsf_modes,dsf_train_modes,pca_modes,pca_train_modes,file_modes,scenarios):
-        knn = KNeighborsRegressor()
-
-        observations = pca_train_mode.to_numpy().shape[0]
-
-        #Parameters GridSearch CV (PICK K NEIGHBOURS BASED ON NUMBER OF OBSERVATIONS PER MODEL) (Put outside for loop)
-        k = [math.ceil(observations*0.001),math.ceil(observations*0.005), math.ceil(observations*0.01), math.ceil(observations*0.05), math.ceil(observations*0.1), math.ceil(observations*0.2)]
-        param_grid = {'n_neighbors': k, 'weights' : ['uniform','distance'], 'p':[1,2], 'metric':['minkowski','euclidean','manhattan']}
-
+        dsf_old = dsf_mode
+        orders_used = []
         for pc in range(np.shape(dsf_mode)[1]):
+
             r2 = []
-            x = pca_mode.to_numpy()
+            for order in range(max_order):
+                order = order + 1
+                
+                poly = PolynomialFeatures(degree=order, include_bias=False)
 
-            y = dsf_mode.iloc[:,pc].to_numpy()
-            y = y.ravel()
+                x = pca_mode.to_numpy()
 
-            #Training data (Repaired)
-            x_train = pca_train_mode.to_numpy()
+                y = dsf_mode.iloc[:,pc].to_numpy()
+                y = y.ravel()
 
-            y_train = dsf_train_mode.iloc[:,pc].to_numpy()
-            y_train = y_train.ravel()
-
-            #Split to have training and validation data
-            x_train, x_validation, y_train, y_validation = train_test_split(x_train, y_train, test_size=0.3, random_state=42)
-
-            grid = GridSearchCV(estimator=knn, param_grid=param_grid, cv=5, scoring='r2', n_jobs=6)
-            
-            #n_jobs: take into account number of CPUs to use
-
-            grid.fit(x_train,y_train)
-            # print(grid.best_estimator_)
-            # print(grid.best_score_)
-
-            #Validation
-            y_validation_pred = grid.predict(x_validation)
-            r2 = r2_score(y_validation,y_validation_pred)
-
-            if r2 >= threshold:
+                #Training data (Repaired)
                 x_train = pca_train_mode.to_numpy()
 
                 y_train = dsf_train_mode.iloc[:,pc].to_numpy()
-                y_train = y_train.ravel()
+                y_train = y_train.reshape(-1,1)
+
+                #Split to have training and validation data
+                x_train, x_validation, y_train, y_validation = train_test_split(x_train, y_train, test_size=0.3, random_state=42)
+
+                #Create regression model
+                poly_features = poly.fit_transform(x_train)
+                poly_reg_model = LinearRegression(n_jobs=6)
+                poly_reg_model.fit(poly_features, y_train)
+
+                #Validation
+                y_validation_pred = poly_reg_model.predict(poly.transform(x_validation))
+                # print('PC:'+str(pc) +'Order:'+str(order)+'R2:'+str(r2_score(y_validation,y_validation_pred)))
+                r2.append(r2_score(y_validation,y_validation_pred))
+
+            best_r2 = np.max(r2)
+
+            if best_r2 >= threshold:
+                x_train = pca_train_mode.to_numpy()
+
+                y_train = dsf_train_mode.iloc[:,pc].to_numpy()
+                y_train = y_train.reshape(-1,1)
+
+                order_index = r2.index(best_r2)+1
+                orders_used.append(order_index)
+                poly_features = PolynomialFeatures(degree=order_index, include_bias = False)
+
+                #Create regression model
+                poly_features = poly.fit_transform(x_train)
+                poly_reg_model = LinearRegression()
+                poly_reg_model.fit(poly_features, y_train)
 
                 #EOV correction
-                y_train_pred = grid.predict(x_train)
-                y_pred = grid.predict(x)
+                y_train_pred = poly_reg_model.predict(poly.transform(x_train))
+                y_pred = poly_reg_model.predict(poly.transform(x))
 
-                # plt.figure()
-                # plt.scatter(y_train,y_train_pred)
-                # plt.show()
-
-                dsf_mode.iloc[:,pc] = y - y_pred
+                dsf_mode.iloc[:,pc] = y.reshape(-1,1) - y_pred
                 dsf_train_mode.iloc[:,pc] = y_train - y_train_pred
+            else:
+                orders_used.append(0)
 
             if file_mode in plot_modes:
                 plt.figure()
@@ -257,32 +269,39 @@ def knn(threshold:float, plot_modes:list, plot_regression = False):
                 plt.show()
 
         print('Save files ' + str(file_mode))
-        dsf_mode.to_csv('../VestasV27/03regression_analysis/02correction/knn'+'/t'+str(threshold)+'/corrected_dsf_'+file_mode+'.csv',sep=';')
-        dsf_train_mode.to_csv('../VestasV27/03regression_analysis/02correction/knn'+'/t'+str(threshold)+'/corrected_dsf_'+file_mode+'_train.csv',sep=';')
+        dsf_mode.to_csv('../VestasV27/03regression_analysis/02correction/adaptive_order'+'/t'+str(threshold)+'/corrected_dsf_'+file_mode+'.csv',sep=';')
+        dsf_train_mode.to_csv('../VestasV27/03regression_analysis/02correction/adaptive_order'+'/t'+str(threshold)+'/corrected_dsf_'+file_mode+'_train.csv',sep=';')
+
+        # print(np.sum(np.abs(dsf_old.values) - np.abs(dsf_mode.values)))
+
+        # for o in range(max_order+1):
+        #     print('Order:'+str(o))
+        #     print(orders_used.count(o))
 
     print('done')
 
 #Write command
-# print('0')
-# knn(threshold=0.0,plot_modes=[])
-# knn(threshold=0.05,plot_modes=[])
-# knn(threshold=0.1,plot_modes=[])
-# knn(threshold=0.15,plot_modes=[])
-# knn(threshold=0.2,plot_modes=[])
-# knn(threshold=0.25,plot_modes=[])
-# knn(threshold=0.3,plot_modes=[])
-# knn(threshold=0.35,plot_modes=[])
-# knn(threshold=0.4,plot_modes=[])
-# knn(threshold=0.45,plot_modes=[])
-# knn(threshold=0.5,plot_modes=[])
-# print('0.5')
-# knn(threshold=0.55,plot_modes=[])
-# knn(threshold=0.6,plot_modes=[])
-# knn(threshold=0.65,plot_modes=[])
-# knn(threshold=0.7,plot_modes=[])
-# knn(threshold=0.75,plot_modes=[])
-knn(threshold=0.8,plot_modes=[])
-knn(threshold=0.85,plot_modes=[])
-knn(threshold=0.9,plot_modes=[])
-knn(threshold=0.95,plot_modes=[])
-knn(threshold=1.0,plot_modes=[])
+print('0')
+# polynomial_regression(max_order=6,threshold=0.0,plot_modes=[])
+# polynomial_regression(max_order=6,threshold=0.05,plot_modes=[])
+# polynomial_regression(max_order=6,threshold=0.10,plot_modes=[])
+# polynomial_regression(max_order=6,threshold=0.15,plot_modes=[])
+# polynomial_regression(max_order=6,threshold=0.20,plot_modes=[])
+# polynomial_regression(max_order=6,threshold=0.25,plot_modes=[])
+# polynomial_regression(max_order=6,threshold=0.30,plot_modes=[])
+# polynomial_regression(max_order=6,threshold=0.35,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.40,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.45,plot_modes=[])
+
+print('0.5')
+polynomial_regression(max_order=6,threshold=0.50,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.55,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.60,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.65,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.70,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.75,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.80,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.85,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.90,plot_modes=[])
+polynomial_regression(max_order=6,threshold=0.95,plot_modes=[])
+polynomial_regression(max_order=6,threshold=1.00,plot_modes=[])

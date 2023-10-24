@@ -1,12 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-path_metadata_idle = '../code_6modes/01clean_data/results/metadata_idle.csv'
-path_metadata_parked = '../code_6modes/01clean_data/results/metadata_parked.csv'
-path_metadata_t1 = '../code_6modes/01clean_data/results/metadata_t1.csv'
-path_metadata_rpm32 = '../code_6modes/01clean_data/results/metadata_rpm32.csv'
-path_metadata_t2= '../code_6modes/01clean_data/results/metadata_t2.csv'
-path_metadata_rpm43 = '../code_6modes/01clean_data/results/metadata_rpm43.csv'
+path_metadata_idle = '../VestasV27/01clean_data/results/metadata_idle.csv'
+path_metadata_parked = '../VestasV27/01clean_data/results/metadata_parked.csv'
+path_metadata_t1 = '../VestasV27/01clean_data/results/metadata_t1.csv'
+path_metadata_rpm32 = '../VestasV27/01clean_data/results/metadata_rpm32.csv'
+path_metadata_t2= '../VestasV27/01clean_data/results/metadata_t2.csv'
+path_metadata_rpm43 = '../VestasV27/01clean_data/results/metadata_rpm43.csv'
 
 metadata_idle = pd.read_csv(path_metadata_idle,index_col=0,sep=';')
 metadata_parked = pd.read_csv(path_metadata_parked,index_col=0,sep=';')
