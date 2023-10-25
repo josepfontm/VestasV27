@@ -20,6 +20,15 @@ This is a previous study carried out by the Technical University of Denmark (DTU
 ## Hybrid implicit-explicit regression
 Mitigation of Environmental and Operational Variabilities (EOVs) remains one of the main challenges to adopting Structural Health Monitoring (SHM) as part of wind turbine maintenance. To this end, two main strategies have been proposed: explicit and implicit procedures, which attempt to mitigate EOV effects in different ways. Explicit methods build regression models using environmental and/or operational parameters, which are later used to correct Damage-sensitive Features (DSFs), while Implicit methods disregard certain DSFs due to their influence on EOVs. This work proposes the use of so-called hybrid implicit-explicit procedures to minimize the drawbacks of conventional procedures. In comparison to explicit methods, this hybrid approach only corrects DSFs that are influenced by EOVs. Therefore, avoiding poor corrections of DSFs. In addition, it does not disregard DSFs as it happens on implicit methods, thus eliminating the loss of damage information from certain DSFs. These two factors are considered to be advantageous for improving damage detection performance. The work results are validated using vibrational data from an operational Vestas V27 wind turbine with different induced damages on one of its blades. The proposed method outperforms fully explicit procedures using different regression models, implying that models can benefit from a selective DSF correction.
 
+## Functions available
+Original data from the Vestas V27 is not published, as it was shared by Dmitri Tcherniak from HBK. Nonetheless, all functions coded for this work as provided.
+They could be repurposed for other wind turbines or civil structures datasets with small effort.
+The repo contains the following folders:
+*00data_discovery
+*01clean_data
+*02dimensionality_reduction
+*03regression_analysis
+
 ### Cite our work:
 I will add the citation once the work is published
 
