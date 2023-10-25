@@ -24,10 +24,10 @@ Mitigation of Environmental and Operational Variabilities (EOVs) remains one of 
 Original data from the Vestas V27 is not published, as it was shared by Dmitri Tcherniak from HBK. Nonetheless, all functions coded for this work as provided.
 They could be repurposed for other wind turbines or civil structures datasets with small effort.
 The repo contains the following folders:
-*00data_discovery
-*01clean_data
-*02dimensionality_reduction
-*03regression_analysis
+- 00data_discovery
+- 01clean_data
+- 02dimensionality_reduction
+- 03regression_analysis
 
 ### Cite our work:
 I will add the citation once the work is published
