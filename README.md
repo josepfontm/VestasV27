@@ -23,6 +23,13 @@ Mitigation of Environmental and Operational Variabilities (EOVs) remains one of 
 ## Functions available
 Original data from the Vestas V27 is not published, as it was shared by Dmitri Tcherniak from HBK. Nonetheless, all functions coded for this work as provided.
 They could be repurposed for other wind turbines or civil structures datasets with small effort.
+The repository contains the following folders:
+- 00data_discovery: Contains functions to plot PSD graphs
+- 01clean_data: Remove some outliers from PSDs 
+- 02dimensionality_reduction: The main function is _principal_component_analysis.py_, which is used to convert the original data (time series, operational and environmental parameters) to Principal Components. Previously, data is normalized.
+- 03regression_analysis: Contains the main part of this work, with 3 subfolders: _01regression_, _02correction_, _03control_charts_. 
+
+  
 
 ### Cite our work:
 I will add the citation once the work is published
