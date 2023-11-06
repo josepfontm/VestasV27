@@ -27,7 +27,10 @@ The repository contains the following folders:
 - 00data_discovery: Contains functions to plot PSD graphs
 - 01clean_data: Remove some outliers from PSDs 
 - 02dimensionality_reduction: The main function is _principal_component_analysis.py_, which is used to convert the original data (time series, operational and environmental parameters) to Principal Components. Previously, data is normalized.
-- 03regression_analysis: Contains the main part of this work, with 3 subfolders: _01regression_, _02correction_, _03control_charts_. 
+- 03regression_analysis: Contains the main part of this work, with 3 subfolders: _01regression_, _02correction_, _03control_charts_.
+
+The file _extract_data.py_ contains all code used to extract both PSDs as well as EOPs from the raw data provided.
+The file _rutina_psd.py_ calls the functions from _extract_data.py_, with specific arguments used in this work.
 
   
 
